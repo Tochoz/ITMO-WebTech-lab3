@@ -1,108 +1,139 @@
 @font-face {
-    font-family: MyFont;
-    src: url(Bahnschrift.ttf);
+    font-family: "MullerMedium";
+    src: url("https://db.onlinewebfonts.com/t/892951b494976f7fd57f5d460c690966.eot");
+    src: url("https://db.onlinewebfonts.com/t/892951b494976f7fd57f5d460c690966.eot?#iefix")format("embedded-opentype"),
+    url("https://db.onlinewebfonts.com/t/892951b494976f7fd57f5d460c690966.woff2")format("woff2"),
+    url("https://db.onlinewebfonts.com/t/892951b494976f7fd57f5d460c690966.woff")format("woff"),
+    url("https://db.onlinewebfonts.com/t/892951b494976f7fd57f5d460c690966.ttf")format("truetype"),
+    url("https://db.onlinewebfonts.com/t/892951b494976f7fd57f5d460c690966.svg#MullerMedium")format("svg");
 }
 
 body{
-    font-family: MyFont;
-    padding: 0 200px;
-    background-color: #EEEEEE;
-    font-size: 120%;
-    min-width: 350px;
+    font-family: MullerMedium;
+    margin: 10px;
+    font-size: 21px;
+    font-weight: 400;
+}
+
+h1{
+    font-size: 64px;
+    margin-top: 200px;
+    margin-bottom: 27px;
+}
+
+
+button, input[type="submit"], input[type="reset"] {
+	background: none;
+	color: inherit;
+	border: none;
+	padding: 0;
+	font: inherit;
+	outline: inherit;
+    cursor: pointer;
+}
+
+section.main{
+    padding: 38px 100px 10px 100px;
     box-sizing: border-box;
+    height: 910px;
+    display: flex;
 }
 
 header{
-    font-weight: 600;
-    border: solid 1px black;
-}
-
-.photo{
-    float: left;
-    margin: 0 40px 0 0;
-    width: 300px;
-    border-radius: 30px;
-}
-header>ul {
-    list-style-type: none;
-}
-header>ul {
+    position: absolute;
     display: flex;
-    justify-content: space-around;
-    gap:40px;
-    padding-right: 50px;
+    width: calc(100% - 220px);
+    justify-content: space-between;
+    height: fit-content;
 
 }
-header>ul>li{
-    height: fit-content;
-    margin: auto 0;
-}
-/*.contacts>*{*/
-/*    font-size: 1.3em;*/
-/*}*/
-.push{
-    margin-left: auto;
-}
-li>a{
-    text-decoration: none;
+
+header>figure{
+    margin: 0;
+    align-self: center;
 }
 
-a{
-/*    text-decoration: none;*/
-    color: inherit;
+.contacts{
+    padding: 5px 5px 5px 40px;
+    background-image: url("icons/contacts.svg");
+    background-repeat: no-repeat;
+    background-position: 5px 5px;
+    height: 35px;
+    align-self: center;
+    cursor: pointer;
 }
-h1{
-    font-size: 200%;
+
+section.main>section>p{
+    margin: 0;
 }
-section.head{
-    margin-bottom: 30px;
-    height: fit-content;
-    height: 400px;
+
+section.main>section>*.panel{
+    margin-top: 45px;
+    display: flex;
+    gap: 30px;
+}
+
+section.main>section>*.panel>button{
+    color: white;
+    font-weight: 400;
+    font-size: 16px;
+
+    width: 260px; 
+    height: 50px; 
+
+    background: #F9572E; 
+    box-shadow: 0px 7px 15px rgba(249, 87, 46, 0.60);
     
+    border: none;
+    border-radius: 25px;
+    word-wrap: break-word
 }
-li{
-    margin-top: 0.8em;
-}
-span.nowrap {
-    white-space: nowrap;
+aside.video{
+    float: right;
+    height: 920px;
+    margin-top: -38px;
+    margin-right: -100px;
+    width: calc(50% + 100px);
+
+    background-image: url("media/mainimage.png");
+    background-size: cover;
+    background-position: center;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-@media (max-width: 1100px){
-    body{
-        padding: 0 10%;
-        font-size: 100%;
-    }
+section.main>section{
+    width: 50%;
 }
-@media (max-width: 730px){
-    header>ul {
-        flex-direction: column;
-    }
-    .photo{
-        width: 200px;
-    }
-    section.head{
-        height: 270px;
-    }
-    header>ul>li{
-        margin: auto;
-    }
+
+button.playvideo{
+    height: 315px;
+    width: 255px;
+    padding: 255px 0 10px 0;
+    text-align: center;
+    background: url(icons/play.svg) top center no-repeat;
+    color: #F9572E; line-height: 30px; 
+    word-wrap: break-word;
 }
-@media (max-width: 585px){
-    .photo{
-        display: none;
-    }
-    h1,h2{
-        text-align: center;
-    }
-    section.head{
-        padding: 0 10%;
-        margin-top: 3em;
-        height: fit-content;
-    }
+
+label.noaccent{
+    line-height: 24px;
+    font-size: 16px;
+    color: #666666;
+    align-self: center;
 }
-@media (max-width: 400px){
-    body{
-        padding: 0 10%;
-        font-size: 110%;
-    }
+
+a.scroll{
+    position: absolute;
+    top: calc(100vh - 90px); /* Для того чтобы якорь всегода был рядом снизу viewport */
+    padding: 3px 5px 3px 53px;
+
+    background: url(icons/arrows.svg) left center no-repeat;
+
+    color: #F9572E;
+    font-size: 16px;
+    line-height: 18px;
+    word-wrap: break-word
 }
