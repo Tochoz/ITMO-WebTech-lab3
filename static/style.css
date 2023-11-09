@@ -1,0 +1,108 @@
+@font-face {
+    font-family: MyFont;
+    src: url(Bahnschrift.ttf);
+}
+
+body{
+    font-family: MyFont;
+    padding: 0 200px;
+    background-color: #EEEEEE;
+    font-size: 120%;
+    min-width: 350px;
+    box-sizing: border-box;
+}
+
+header{
+    font-weight: 600;
+    border: solid 1px black;
+}
+
+.photo{
+    float: left;
+    margin: 0 40px 0 0;
+    width: 300px;
+    border-radius: 30px;
+}
+header>ul {
+    list-style-type: none;
+}
+header>ul {
+    display: flex;
+    justify-content: space-around;
+    gap:40px;
+    padding-right: 50px;
+
+}
+header>ul>li{
+    height: fit-content;
+    margin: auto 0;
+}
+/*.contacts>*{*/
+/*    font-size: 1.3em;*/
+/*}*/
+.push{
+    margin-left: auto;
+}
+li>a{
+    text-decoration: none;
+}
+
+a{
+/*    text-decoration: none;*/
+    color: inherit;
+}
+h1{
+    font-size: 200%;
+}
+section.head{
+    margin-bottom: 30px;
+    height: fit-content;
+    height: 400px;
+    
+}
+li{
+    margin-top: 0.8em;
+}
+span.nowrap {
+    white-space: nowrap;
+}
+
+@media (max-width: 1100px){
+    body{
+        padding: 0 10%;
+        font-size: 100%;
+    }
+}
+@media (max-width: 730px){
+    header>ul {
+        flex-direction: column;
+    }
+    .photo{
+        width: 200px;
+    }
+    section.head{
+        height: 270px;
+    }
+    header>ul>li{
+        margin: auto;
+    }
+}
+@media (max-width: 585px){
+    .photo{
+        display: none;
+    }
+    h1,h2{
+        text-align: center;
+    }
+    section.head{
+        padding: 0 10%;
+        margin-top: 3em;
+        height: fit-content;
+    }
+}
+@media (max-width: 400px){
+    body{
+        padding: 0 10%;
+        font-size: 110%;
+    }
+}
