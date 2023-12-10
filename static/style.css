@@ -8,11 +8,17 @@
     url("https://db.onlinewebfonts.com/t/892951b494976f7fd57f5d460c690966.svg#MullerMedium")format("svg");
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body{
     font-family: MullerMedium;
-    margin: 10px;
-    font-size: 21px;
+    margin: 0;
+    font-size: 16px;
     font-weight: 400;
+    overflow-x: hidden;
+
 }
 
 h1{
@@ -36,6 +42,7 @@ h3{
 
 button, input[type="submit"], input[type="reset"] {
 	background: none;
+    box-sizing: border-box;
 	color: inherit;
 	border: none;
 	padding: 0;
@@ -45,6 +52,7 @@ button, input[type="submit"], input[type="reset"] {
 }
 
 section.main{
+    margin: 10px 10px 0 10px;
     padding: 38px 100px 10px 100px;
     box-sizing: border-box;
     height: 910px;
@@ -65,15 +73,23 @@ header>figure{
     align-self: center;
 }
 
-.contacts{
+a.contacts{
+    text-decoration: none;
+    color: black;
     padding: 5px 5px 5px 40px;
     background-image: url("icons/contacts.svg");
     background-repeat: no-repeat;
     background-position: 5px 5px;
-    height: 35px;
+    font-size: 21px;
+    height: 35px;    
     align-self: center;
     cursor: pointer;
 }
+a.contacts:hover{
+    color: #F9572E;
+    transition: 0.2s;
+}
+
 
 section.main>section>p{
     margin: 0;
@@ -85,21 +101,27 @@ section.main>section>*.panel{
     gap: 30px;
 }
 
-section.main>section>*.panel>button{
+.button-accent, input[type="submit"].button-accent{
     color: white;
+    background: #F9572E; 
     font-weight: 400;
     font-size: 16px;
 
     width: 260px; 
     height: 50px; 
 
-    background: #F9572E; 
+    transition: 0.2s;
     box-shadow: 0px 7px 15px rgba(249, 87, 46, 0.60);
     
     border: none;
     border-radius: 25px;
     word-wrap: break-word
 }
+.button-accent:hover, input[type="submit"].button-accent:hover{
+    background: #FF7B59;
+    
+}
+
 aside.video{
     float: right;
     height: 920px;
@@ -132,7 +154,6 @@ button.playvideo{
 
 label.noaccent{
     line-height: 24px;
-    font-size: 16px;
     color: #666666;
     align-self: center;
 }
@@ -145,7 +166,7 @@ a.scroll{
     background: url(icons/arrows.svg) left center no-repeat;
 
     cursor: pointer;
-
+    text-decoration: none;
     color: #F9572E;
     font-size: 16px;
     line-height: 18px;
@@ -230,5 +251,328 @@ section.about>ul>li>p{
 {
     .cutwide{
         margin: 0 10%;
+    }
+}
+
+section.carousel{
+    padding: 150px 0 50px;
+}
+
+
+.carousel-container {
+    height: 500px;
+    margin: 0 -35px;
+}
+
+.carousel-viewport {
+    list-style: none;
+    margin-block-start: 0;
+    margin-block-end: 0;
+    padding-inline-start: 0;
+    height: 100%;
+    width: 500%;
+    display: flex;
+    transition: transform 0.3s ease-in-out;
+}
+.carousel-viewport>li{
+    display: block;
+    flex: 0 0 20%;
+}
+
+.carousel-figure {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0 35px;
+    box-sizing: border-box;
+
+    opacity: 0.6;
+    text-align: center;
+    display: flex;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.carousel-figure.active {
+    opacity: 1;
+}
+
+.carousel-figure>img {
+    object-fit: cover;
+    transition: width 0.2s 0.1s ease-in-out;
+    width: 100%;
+}
+
+.carousel-figure.active>img{
+    width: 75%;
+    transition: width 0.3s ease-in-out;
+}
+
+.carousel-caption {
+    padding: 0 0 0 17px;
+    text-align: left;
+    box-sizing: border-box;
+    color: #666666;
+    line-height: 20px;
+    word-wrap: normal;
+
+    transition: width 0s 0.1s, opacity 0.1s linear;
+    opacity: 0;
+    width: 0;
+
+}
+
+.carousel-figure.active>.carousel-caption{
+    transition: width 0s 0.5s, opacity 0.4s 0.5s linear;
+    height: auto;
+    opacity: 1;
+    width: 25%;
+}
+
+.carousel-controls{
+    width: 75px;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    float: right;
+    justify-content: space-between;
+    margin-top: -45px;
+    margin-right: 8%;
+}
+
+.prev, .next {
+    object-fit: fill;
+    z-index: inherit;
+    cursor: pointer;
+    
+}
+.prev>path, .next>path{
+    scale: 1 1;
+    transform-origin: center;
+
+    transition: scale 0.4s ease-in-out;
+}
+
+.prev:hover>path, .next:hover>path{
+    scale: 1 0.8;
+    transform-origin: center;
+    transition: scale 0.4s ease-in-out;
+}
+
+.next { 
+    rotate: 180deg;
+}
+
+section.form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 150px 0 50px 0;
+    margin-bottom: 140px;
+
+
+    h2{
+        display: block;
+        width: fit-content;
+        z-index: 2;
+        margin: 0 1em -.6em 1em;
+        padding: 0 3%;
+        text-align: center;
+        background-color: white;
+
+
+        -webkit-user-select: none;
+        -khtml-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        -o-user-select: none;
+        user-select: none;
+    }
+}
+
+form{
+    box-sizing: border-box;
+    min-height: 650px;
+    width: 100%;
+    padding: 60px 5% 60px 5%;
+    border: #63D2C1 4px solid;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+
+    p:first-child{
+        padding: .5em 1em .3em 60px;
+        margin: 0;
+        height: 4rem;
+        background-image: url("icons/door.svg");
+        background-repeat: no-repeat;
+        align-self: center;
+        background-size: 47px 70px;
+        text-transform: uppercase;
+        line-height: 24px;
+        font-weight: 400;
+    }
+
+
+    ul{
+        padding: 0;
+        max-width: 500px;
+        width: 90%;
+        margin-bottom: 40px;
+    }
+    label{
+        z-index: 2;
+        display: inline;
+        width: fit-content;
+        margin-left: 20px;
+        padding-left: 6px;
+        padding-right: 6px;
+        color: #666666;
+        font-size: 13px;
+        font-weight: 400;
+        line-height: 24px;
+        background: white;
+
+        opacity: 0;
+        transition: opacity 0.2s ease-in-out;
+
+
+        -webkit-user-select: none;
+        -khtml-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        -o-user-select: none;
+        user-select: none;
+    }
+    input {
+        display: block;
+        width: 100%;
+        margin-top: -12px;
+        line-height: 40px;
+        padding: 10px 20px;
+        box-sizing: border-box;
+        font-size: 20px;
+        color: #222;
+        border-radius: 4px; border: 1.2px #CCCCCC solid;
+        &:focus {
+            outline: 0;
+            border-color: #F9572E;
+        }
+
+    }
+    .field {
+        list-style-type: none;
+    }
+    .field:not(:last-child){
+        margin-bottom: 30px;
+    }
+}
+
+footer{
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    background-color: #F2F2F2;
+    padding: 0 80px;
+    
+    section.info{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 70px;
+    }
+
+    p{
+        margin-top: 0;
+        font-size: 16px;
+        max-width: 500px;
+        text-align: center;
+        color: #666666;
+    }
+
+    ul.media{
+        padding: 0;
+        max-width: 500px;
+        width: 90%;
+        margin-bottom: 30px;
+        display: flex;
+        gap: 30px;
+        width: fit-content;
+        height: 51px;
+
+        svg{
+            transition: 0.4s ease-in-out;
+            rect{
+                transition: 0.4s ease-in-out;
+            }
+            rect:hover{
+                
+                fill: #FF7B59;
+            }
+        }
+        svg:hover{
+            box-shadow: 0px 15px 20px rgba(249, 87, 46, 0.70);
+            
+        }
+    }
+    li{
+        list-style-type: none;
+    }
+
+    ul.contacts{
+        display: flex;
+        padding: 0;
+        max-width: 1000px;
+        width: 90%;
+        justify-content: space-between;
+    
+        li{
+                
+                font-size: 21px;
+                height: 35px;    
+                align-self: center;
+                
+        }
+        li:first-child, li:last-child{
+            padding: 5px 5px 5px 43px;
+            cursor: pointer;
+            background-repeat: no-repeat;
+            background-position: 5px 5px;
+
+            a{
+                text-decoration: none;
+                color: #222;
+            }
+
+        
+        }
+
+        li:first-child{
+            background-image: url("icons/contacts.svg");
+        }
+        li:last-child{
+            background-image: url("icons/Mail.svg");
+            a{
+                text-decoration: underline;
+                text-decoration-color: #F9572E;
+                
+            }
+        }
+
+            
+        li>a:hover{
+            color: #F9572E;
+            transition: 0.2s;
+        }
+    }
+    section.bottom{
+        padding: 34px 0;
+        border-top: 1px #CCCCCC solid;
+        margin-top: auto;
+        color: #666666;
+        text-align: center;
+
+        display: flex;
+        justify-content: center;
     }
 }
