@@ -129,7 +129,11 @@ aside.video{
     margin-right: -100px;
     width: calc(50% + 100px);
 
-    background-image: url("media/mainimage.png");
+    background-image: image-set(
+        url("media/mainimage.webp") type("image/webp"),
+        url("media/mainimage.jpg") type("image/jpg")
+      );
+
     background-size: cover;
     background-position: center;
 
@@ -296,13 +300,19 @@ section.carousel{
     opacity: 1;
 }
 
-.carousel-figure>img {
-    object-fit: cover;
+.carousel-figure>picture {
+    
     transition: width 0.2s 0.1s ease-in-out;
     width: 100%;
+
+    img{
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+    }
 }
 
-.carousel-figure.active>img{
+.carousel-figure.active>picture{
     width: 75%;
     transition: width 0.3s ease-in-out;
 }
@@ -501,6 +511,7 @@ footer{
         height: 51px;
 
         svg{
+            cursor: pointer;
             transition: 0.4s ease-in-out;
             rect{
                 transition: 0.4s ease-in-out;
@@ -545,6 +556,7 @@ footer{
             a{
                 text-decoration: none;
                 color: #222;
+                transition: 0.2s;
             }
 
         
