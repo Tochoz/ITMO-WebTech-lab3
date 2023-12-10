@@ -204,9 +204,10 @@ section.about>ul{
     justify-content: space-between;
     row-gap: 80px;
 }
-
-section.about>ul>li{
+li{
     list-style-type: none;
+}
+section.about>ul>li{
     margin: 0;
     padding: 0;
     padding-right: 10px;
@@ -305,11 +306,12 @@ section.carousel{
     transition: width 0.2s 0.1s ease-in-out;
     width: 100%;
 
-    img{
-        height: 100%;
-        width: 100%;
-        object-fit: cover;
-    }
+    
+}
+.carousel-figure>picture>img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
 }
 
 .carousel-figure.active>picture{
@@ -380,23 +382,24 @@ section.form{
     margin-bottom: 140px;
 
 
-    h2{
-        display: block;
-        width: fit-content;
-        z-index: 2;
-        margin: 0 1em -.6em 1em;
-        padding: 0 3%;
-        text-align: center;
-        background-color: white;
+    
+}
+section.form>h2{
+    display: block;
+    width: fit-content;
+    z-index: 2;
+    margin: 0 1em -.6em 1em;
+    padding: 0 3%;
+    text-align: center;
+    background-color: white;
 
 
-        -webkit-user-select: none;
-        -khtml-user-select: none;
-        -moz-user-select: none;
-        -ms-user-select: none;
-        -o-user-select: none;
-        user-select: none;
-    }
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -o-user-select: none;
+    user-select: none;
 }
 
 form{
@@ -408,74 +411,74 @@ form{
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+form>p:first-child{
+    padding: .5em 1em .3em 60px;
+    margin: 0;
+    height: 4rem;
+    background-image: url("icons/door.svg");
+    background-repeat: no-repeat;
+    align-self: center;
+    background-size: 47px 70px;
+    text-transform: uppercase;
+    line-height: 24px;
+    font-weight: 400;
+}
 
 
-    p:first-child{
-        padding: .5em 1em .3em 60px;
-        margin: 0;
-        height: 4rem;
-        background-image: url("icons/door.svg");
-        background-repeat: no-repeat;
-        align-self: center;
-        background-size: 47px 70px;
-        text-transform: uppercase;
-        line-height: 24px;
-        font-weight: 400;
+form>ul{
+    padding: 0;
+    max-width: 500px;
+    width: 90%;
+    margin-bottom: 40px;
+}
+form>ul>li>label{
+    z-index: 2;
+    display: inline;
+    width: fit-content;
+    margin-left: 20px;
+    padding-left: 6px;
+    padding-right: 6px;
+    color: #666666;
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 24px;
+    background: white;
+
+    opacity: 0;
+    transition: opacity 0.2s ease-in-out;
+
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+}
+
+form>ul>li>input {
+    display: block;
+    width: 100%;
+    margin-top: -12px;
+    line-height: 40px;
+    padding: 10px 20px;
+    box-sizing: border-box;
+    font-size: 20px;
+    color: #222;
+    border-radius: 4px; border: 1.2px #CCCCCC solid;
+    &:focus {
+        outline: 0;
+        border-color: #F9572E;
     }
 
+}
+.field {
+    padding: 0;
+}
 
-    ul{
-        padding: 0;
-        max-width: 500px;
-        width: 90%;
-        margin-bottom: 40px;
-    }
-    label{
-        z-index: 2;
-        display: inline;
-        width: fit-content;
-        margin-left: 20px;
-        padding-left: 6px;
-        padding-right: 6px;
-        color: #666666;
-        font-size: 13px;
-        font-weight: 400;
-        line-height: 24px;
-        background: white;
-
-        opacity: 0;
-        transition: opacity 0.2s ease-in-out;
-
-
-        -webkit-user-select: none;
-        -khtml-user-select: none;
-        -moz-user-select: none;
-        -ms-user-select: none;
-        -o-user-select: none;
-        user-select: none;
-    }
-    input {
-        display: block;
-        width: 100%;
-        margin-top: -12px;
-        line-height: 40px;
-        padding: 10px 20px;
-        box-sizing: border-box;
-        font-size: 20px;
-        color: #222;
-        border-radius: 4px; border: 1.2px #CCCCCC solid;
-        &:focus {
-            outline: 0;
-            border-color: #F9572E;
-        }
-
-    }
-    .field {
-        list-style-type: none;
-    }
-    .field:not(:last-child){
-        margin-bottom: 30px;
-    }
+.field:not(:last-child){
+    margin-bottom: 30px;
 }
 
 footer{
@@ -484,110 +487,103 @@ footer{
     line-height: 24px;
     background-color: #F2F2F2;
     padding: 0 80px;
-    
-    section.info{
+}
+footer>section.info{
         display: flex;
         flex-direction: column;
         align-items: center;
         padding: 70px;
     }
 
-    p{
-        margin-top: 0;
-        font-size: 16px;
-        max-width: 500px;
-        text-align: center;
-        color: #666666;
-    }
+p.footer{
+    margin-top: 0;
+    font-size: 16px;
+    max-width: 500px;
+    text-align: center;
+    color: #666666;
+}
 
-    ul.media{
-        padding: 0;
-        max-width: 500px;
-        width: 90%;
-        margin-bottom: 30px;
-        display: flex;
-        gap: 30px;
-        width: fit-content;
-        height: 51px;
+ul.media{
+    padding: 0;
+    max-width: 500px;
+    width: 90%;
+    margin-bottom: 30px;
+    display: flex;
+    gap: 30px;
+    width: fit-content;
+    height: 51px;
+}
+svg.socialmedia{
+    cursor: pointer;
+    transition: 0.4s ease-in-out;
+}
 
-        svg{
-            cursor: pointer;
-            transition: 0.4s ease-in-out;
-            rect{
-                transition: 0.4s ease-in-out;
-            }
-            rect:hover{
-                
-                fill: #FF7B59;
-            }
-        }
-        svg:hover{
-            box-shadow: 0px 15px 20px rgba(249, 87, 46, 0.70);
-            
-        }
-    }
-    li{
-        list-style-type: none;
-    }
-
-    ul.contacts{
-        display: flex;
-        padding: 0;
-        max-width: 1000px;
-        width: 90%;
-        justify-content: space-between;
-        flex-wrap: wrap;
-        justify-items: center;
-        gap: 40px;
+svg.socialmedia>rect{
+    transition: 0.4s ease-in-out;
+}
+svg.socialmedia>rect:hover{
     
-        li{
-                
-                font-size: 21px;
-                height: 35px;    
-                align-self: center;
-                
-        }
-        li:first-child, li:last-child{
-            padding: 5px 5px 5px 43px;
-            cursor: pointer;
-            background-repeat: no-repeat;
-            background-position: 5px 5px;
+    fill: #FF7B59;
+}
 
-            a{
-                text-decoration: none;
-                color: #222;
-                transition: 0.2s;
-            }
-
+svg.socialmedia:hover{
+    box-shadow: 0px 15px 20px rgba(249, 87, 46, 0.70); 
+}
+ul.contacts{
+    display: flex;
+    padding: 0;
+    max-width: 1000px;
+    width: 90%;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    justify-items: center;
+    gap: 40px;
+}
+ul.contacts>li{
+    font-size: 21px;
+    height: 35px;    
+    align-self: center;
         
-        }
+}
+ul.contacts>li:first-child, ul.contacts>li:last-child{
+    padding: 5px 5px 5px 43px;
+    cursor: pointer;
+    background-repeat: no-repeat;
+    background-position: 5px 5px;
 
-        li:first-child{
-            background-image: url("icons/contacts.svg");
-        }
-        li:last-child{
-            background-image: url("icons/Mail.svg");
-            a{
-                text-decoration: underline;
-                text-decoration-color: #F9572E;
-                
-            }
-        }
+}
 
-            
-        li>a:hover{
-            color: #F9572E;
-            transition: 0.2s;
-        }
-    }
-    section.bottom{
-        padding: 34px 0;
-        border-top: 1px #CCCCCC solid;
-        margin-top: auto;
-        color: #666666;
-        text-align: center;
+ul.contacts>li:first-child>a, ul.contacts>li:last-child>a{
+    text-decoration: none;
+    color: #222;
+    transition: 0.2s;
+}
 
-        display: flex;
-        justify-content: center;
-    }
+ul.contacts>li:first-child{
+    background-image: url("icons/contacts.svg");
+}
+ul.contacts>li:last-child{
+    background-image: url("icons/Mail.svg");
+    
+}
+
+ul.contacts>li:last-child>a{
+    text-decoration: underline;
+    text-decoration-color: #F9572E;
+    
+}
+
+ul.contacts>li>a:hover{
+    color: #F9572E;
+    transition: 0.2s;
+}
+footer>section.bottom{
+    padding: 34px 0;
+    border-top: 1px #CCCCCC solid;
+    margin-top: auto;
+    color: #666666;
+    text-align: center;
+
+    display: flex;
+    justify-content: center;
 }
