@@ -525,6 +525,9 @@ footer{
         max-width: 1000px;
         width: 90%;
         justify-content: space-between;
+        flex-wrap: wrap;
+        justify-items: center;
+        gap: 40px;
     
         li{
                 
