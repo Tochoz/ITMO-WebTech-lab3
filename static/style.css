@@ -6,6 +6,7 @@
     url("https://db.onlinewebfonts.com/t/892951b494976f7fd57f5d460c690966.woff")format("woff"),
     url("https://db.onlinewebfonts.com/t/892951b494976f7fd57f5d460c690966.ttf")format("truetype"),
     url("https://db.onlinewebfonts.com/t/892951b494976f7fd57f5d460c690966.svg#MullerMedium")format("svg");
+    font-display: swap;
 }
 
 html {
@@ -86,16 +87,16 @@ a.contacts{
     cursor: pointer;
 }
 a.contacts:hover{
-    color: #F9572E;
+    color: #c54524;
     transition: 0.2s;
 }
 
 
-section.main>section>p{
+section.main>div>p{
     margin: 0;
 }
 
-section.main>section>*.panel{
+section.main>div>*.panel{
     margin-top: 45px;
     display: flex;
     gap: 30px;
@@ -103,7 +104,7 @@ section.main>section>*.panel{
 
 .button-accent, input[type="submit"].button-accent{
     color: white;
-    background: #F9572E; 
+    background: #c54524; 
     font-weight: 400;
     font-size: 16px;
 
@@ -142,7 +143,7 @@ aside.video{
     justify-content: center;
 }
 
-section.main>section{
+section.main>div{
     width: 50%;
 }
 
@@ -171,7 +172,7 @@ a.scroll{
 
     cursor: pointer;
     text-decoration: none;
-    color: #F9572E;
+    color: #c54524;
     font-size: 16px;
     line-height: 18px;
     word-wrap: break-word
@@ -185,7 +186,7 @@ section.about{
 }
 
 p.subtitle{
-    color: #33B5A3;
+    color: #26796d;
     text-transform: uppercase;
     line-height: 24px;
     letter-spacing: 0.62px;
@@ -216,13 +217,13 @@ section.about>ul>li{
     width: 45%;
     min-width: 300px;
     height: 180px;
-    border-top: 4px #63D2C1 solid;
+    border-top: 4px #26796d solid;
     padding-top: 33px;
     box-sizing: border-box;
 }
 
 li.deadline{
-    border: 4px #63D2C1 solid;
+    border: 4px #26796d solid;
     padding: 40px 90px;
     text-align: center;
 }
@@ -577,7 +578,9 @@ ul.contacts>li>a:hover{
     color: #F9572E;
     transition: 0.2s;
 }
-footer>section.bottom{
+footer>section.bottom>h3{
+    line-height: 24px;
+    font-size: 16px;
     padding: 34px 0;
     border-top: 1px #CCCCCC solid;
     margin-top: auto;
